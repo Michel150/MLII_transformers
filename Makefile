@@ -1,13 +1,13 @@
-out/transformers.html: *.md
-	cat templates/markdown_header.html > out/transformers.html && \
-	cat markdown.md >> out/transformers.html && \
-	cat templates/markdown_footer.html >> out/transformers.html
+docs/transformers.html: *.md
+	cat templates/markdown_header.html > docs/transformers.html && \
+	cat markdown.md >> docs/transformers.html && \
+	cat templates/markdown_footer.html >> docs/transformers.html
 
-#out/transformers.pdf: out/transformers.md out/transformers/index.html
-#	cd out && \
+#docs/transformers.pdf: docs/transformers.md docs/transformers/index.html
+#	cd docs && \
 #	chromium --headless --no-margins --print-to-pdf="transformers.pdf" transformers/index.html
 
-all: out/transformers.html
+all: docs/transformers.html
 
 clean:
-	rm -rf out && mkdir out
+	rm -rf docs && mkdir docs
